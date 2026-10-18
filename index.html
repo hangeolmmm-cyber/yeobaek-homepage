@@ -367,13 +367,13 @@ footer .bot{grid-column:1/-1;margin-top:64px;padding-top:28px;border-top:1px sol
   .hero .shade{background:linear-gradient(180deg,rgba(248,246,234,.55) 0,rgba(248,246,234,.35) 22%,rgba(248,246,234,.86) 40%,rgba(248,246,234,.9) 64%,rgba(248,246,234,.45) 86%,rgba(248,246,234,.2) 100%)}
 }
 
-/* ---------- quick menu (PC/태블릿) ---------- */
-.qm{position:fixed;right:20px;top:50%;translate:0 -50%;z-index:45;display:flex;flex-direction:column;align-items:center;gap:10px}
-.qm .box{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:44px;padding:0 0 8px;box-shadow:0 18px 40px -22px rgba(2,52,63,.35);overflow:hidden}
-.qm .box a{display:flex;flex-direction:column;align-items:center;gap:4px;width:84px;padding:12px 0;font-size:16px;line-height:1.3;font-weight:600;color:var(--deep);text-align:center}
+/* ---------- quick menu (PC/태블릿) — 라벨 14px: 사용자 승인 규칙 예외 ---------- */
+.qm{position:fixed;right:20px;top:50%;translate:0 -50%;z-index:45;display:flex;flex-direction:column;align-items:center;gap:12px}
+.qm .box{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:44px;padding:0 0 10px;box-shadow:0 18px 40px -22px rgba(2,52,63,.35);overflow:hidden}
+.qm .box a{display:flex;flex-direction:column;align-items:center;gap:7px;width:84px;padding:18px 0;font-size:14px;line-height:1.3;letter-spacing:-.01em;font-weight:600;color:var(--deep);text-align:center}
 .qm .box a+a{border-top:1px solid var(--line)}
-.qm .box a svg{width:26px;height:26px}
-.qm .box a.hl{background:var(--deep);color:#fff;padding-top:22px;padding-bottom:14px}
+.qm .box a svg{width:24px;height:24px}
+.qm .box a.hl{background:var(--deep);color:#fff;padding-top:28px;padding-bottom:20px}
 .qm .box a:hover{color:var(--point)}.qm .box a.hl:hover{color:var(--point-on-dark)}
 .qm .top{width:56px;height:56px;border-radius:50%;background:var(--deep);color:#fff;display:grid;place-items:center;border:0;cursor:pointer;box-shadow:0 12px 30px -14px rgba(2,52,63,.5);visibility:hidden;position:relative}
 .qm .top svg{width:22px;height:22px}
