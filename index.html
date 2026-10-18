@@ -358,6 +358,14 @@ footer .bot{grid-column:1/-1;margin-top:64px;padding-top:28px;border-top:1px sol
 @media (max-width:767px){.pg-main .h-hero{font-size:clamp(31px,9.2vw,40px)}}
 /* 메인(index)만 대한체 · 400/700 — 서브는 성곡체 유지 */
 .pg-index,.pg-index *,.pg-index button,.pg-index input{font-family:'Daehan','Pretendard Variable',Pretendard,sans-serif}
+
+/* 모바일: 하단 고정바(mbar)와 중복되는 히어로 버튼 제거 + 텍스트 세로 중앙 */
+@media (max-width:767px){
+  .hero .cta{display:none}
+  .hero .inner{inset:0;display:flex;align-items:center;padding:calc(var(--hd-h,64px) + 8px) 0 calc(76px + env(safe-area-inset-bottom))}
+  .hero .inner .wrap{width:100%}
+  .hero .shade{background:linear-gradient(180deg,rgba(248,246,234,.55) 0,rgba(248,246,234,.35) 22%,rgba(248,246,234,.86) 40%,rgba(248,246,234,.9) 64%,rgba(248,246,234,.45) 86%,rgba(248,246,234,.2) 100%)}
+}
 </style>
 </head>
 <body class="pg-main pg-index">
