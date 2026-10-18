@@ -359,6 +359,14 @@ footer .bot{grid-column:1/-1;margin-top:64px;padding-top:28px;border-top:1px sol
 /* 메인(index)만 대한체 · 400/700 — 서브는 성곡체 유지 */
 .pg-index,.pg-index *,.pg-index button,.pg-index input{font-family:'Daehan','Pretendard Variable',Pretendard,sans-serif}
 
+/* 모바일: 하단 고정바(mbar)와 중복되는 히어로 버튼 제거 + 텍스트 세로 중앙 */
+@media (max-width:767px){
+  .hero .cta{display:none}
+  .hero .inner{inset:0;display:flex;align-items:center;padding:calc(var(--hd-h,64px) + 8px) 0 calc(76px + env(safe-area-inset-bottom))}
+  .hero .inner .wrap{width:100%}
+  .hero .shade{background:linear-gradient(180deg,rgba(248,246,234,.55) 0,rgba(248,246,234,.35) 22%,rgba(248,246,234,.86) 40%,rgba(248,246,234,.9) 64%,rgba(248,246,234,.45) 86%,rgba(248,246,234,.2) 100%)}
+}
+
 /* ===== sub pages ===== */
 .sub-hero{padding:calc(var(--header) + 72px) 0 120px;background:var(--bg-light);position:relative;overflow:clip}
 .sub-hero .bg-emb{position:absolute;left:-6%;bottom:-18%;height:80%;width:auto;opacity:.04;pointer-events:none}
@@ -775,6 +783,9 @@ textarea.inp{height:120px;padding:14px 18px;resize:vertical}
 .map .info dt{color:var(--text-sub)}.map .info dd{color:var(--text-strong);font-weight:600}
 @media (max-width:1024px){.map .mp,.map .info{grid-column:1/-1}.map .info{margin-top:32px}}
 @media (max-width:767px){.map{grid-template-columns:repeat(4,minmax(0,1fr))}.map .mp{aspect-ratio:4/3.4}}
+
+/* 모바일: 하단 고정바(mbar)와 중복되는 서브 히어로 버튼 제거 */
+@media (max-width:767px){.sub-hero .cta{display:none}.sub-hero .desc{margin-bottom:0}}
 </style>
 </head>
 <body class="sub pg-main pg-index">
