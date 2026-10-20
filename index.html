@@ -730,7 +730,7 @@ t.addEventListener("click",function(){window.scrollTo({top:0,behavior:matchMedia
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 /* ---------- images: local file first, Magnific link as draft fallback ---------- */
-const IMG={"hero": {"file": "stock/hero-r.jpg", "remote": ""}, "cta": {"file": "stock/cta.jpg", "remote": ""}, "svc-clean": {"file": "stock/svc-clean.jpg", "remote": ""}, "svc-ac": {"file": "stock/svc-ac.jpg", "remote": ""}, "ac-fan": {"file": "stock/ac-fan.jpg", "remote": ""}, "z-entry": {"file": "stock/z-entry.jpg", "remote": ""}, "z-kitchen": {"file": "stock/z-kitchen.jpg", "remote": ""}, "z-bath": {"file": "stock/z-bath.jpg", "remote": ""}, "z-room": {"file": "stock/z-room.jpg", "remote": ""}, "z-window": {"file": "stock/z-window.jpg", "remote": ""}, "z-check": {"file": "stock/z-check.jpg", "remote": ""}};
+const IMG={"hero": {"file": "stock/hero-r.jpg", "remote": ""}, "cta": {"file": "stock/cta.jpg", "remote": ""}, "svc-clean": {"file": "stock/svc-clean.jpg", "remote": ""}, "svc-ac": {"file": "stock/svc-ac.jpg", "remote": ""}, "ac-fan": {"file": "stock/ac-fan.jpg", "remote": ""}, "z-entry": {"file": "stock/z-entry.jpg", "remote": ""}, "z-kitchen": {"file": "stock/z-kitchen.jpg", "remote": ""}, "z-bath": {"file": "stock/z-bath.jpg", "remote": ""}, "z-room": {"file": "stock/z-room.jpg", "remote": ""}, "z-window": {"file": "stock/z-window.jpg", "remote": ""}, "z-check": {"file": "stock/z-check.jpg", "remote": ""}, "team-leader": {"file": "team/leader.jpg", "remote": ""}, "team-clean": {"file": "team/clean.jpg", "remote": ""}, "team-ac": {"file": "team/ac.jpg", "remote": ""}};
 document.querySelectorAll('img[data-img]').forEach(img=>{
   const k=img.dataset.img, it=IMG[k]; if(!it) return;
   img.addEventListener('error',function onErr(){ if(img.dataset.fb) return; img.dataset.fb=1; img.src=it.remote; },{once:false});
@@ -779,7 +779,7 @@ drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setDrawer
   pop.addEventListener('keydown',e=>{ if(e.key==='Escape') close();
     if(e.key==='Tab'){ const f=[...pop.querySelectorAll('button,a[href]')]; const a=f[0], z=f[f.length-1];
       if(e.shiftKey&&document.activeElement===a){ e.preventDefault(); z.focus(); } else if(!e.shiftKey&&document.activeElement===z){ e.preventDefault(); a.focus(); } } });
-  setTimeout(open, reduce?300:2200);
+  setTimeout(open, reduce?300:1800);
 })();
 
 /* ---------- motion ---------- */
@@ -802,22 +802,15 @@ drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setDrawer
     h.innerHTML=parts.map(p=>'<span class="ln"><span>'+p+'</span></span>').join('');
   });
 
-  /* HERO — arch window opens onto the room */
-  const frame=heroEl.querySelector('.frame'), himg=frame.querySelector('img');
-  const archFrom=small?'inset(26% 14% 0% 14% round 50vw 50vw 0vw 0vw)':'inset(16% 37% 0% 37% round 14vw 14vw 0vw 0vw)';
+  /* HERO — 배경은 바로 노출, 텍스트·카드만 순차 등장 */
   gsap.set(['.hero .h-lab','.hero .h-up','.hero .h-card','.hero .h-cue'],{opacity:0}); gsap.set('.hero .tl .ln>span',{yPercent:110});
-  gsap.set(frame,{clipPath:archFrom}); gsap.set(himg,{scale:1.28});
-  gsap.set('.hero .beam',{opacity:0}); gsap.set('.hero .motes i',{opacity:0});
-  gsap.timeline({defaults:{ease:'power3.out'},delay:.15})
-    .to(frame,{clipPath:'inset(0% 0% 0% 0% round 0vw 0vw 0vw 0vw)',duration:1.7,ease:'power3.inOut'})
-    .to(himg,{scale:1,duration:2.2,ease:'power3.out'},'<.15')
-    .to('.hero .beam',{opacity:1,duration:1.6,ease:'sine.out'},'<.6')
-    .fromTo('.hero .h-lab',{y:24},{y:0,opacity:1,duration:.9},'-=1.6')
+  gsap.set('.hero .motes i',{opacity:()=>gsap.utils.random(.45,.95)});
+  gsap.timeline({defaults:{ease:'power3.out'},delay:.2})
+    .fromTo('.hero .h-lab',{y:24},{y:0,opacity:1,duration:.9})
     .to('.hero .tl .ln>span',{yPercent:0,duration:1.1,ease:'power4.out',stagger:.1},'<.1')
     .fromTo('.hero .h-up',{y:24},{y:0,opacity:1,duration:.9,stagger:.08},'<.4')
     .fromTo('.hero .h-card',{y:32},{y:0,opacity:1,duration:1},'<.2')
-    .to('.hero .h-cue',{opacity:1,duration:.8},'<.3')
-    .to('.hero .motes i',{opacity:()=>gsap.utils.random(.45,.95),duration:1.2,stagger:.05},'<');
+    .to('.hero .h-cue',{opacity:1,duration:.8},'<.3');
   /* light motes drifting in the sunbeam */
   gsap.utils.toArray('.hero .motes i').forEach(m=>{
     gsap.to(m,{x:()=>gsap.utils.random(-50,30),y:()=>gsap.utils.random(-70,-20),duration:()=>gsap.utils.random(6,11),ease:'sine.inOut',repeat:-1,yoyo:true,delay:gsap.utils.random(0,2)});
