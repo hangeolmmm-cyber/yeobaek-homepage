@@ -927,9 +927,9 @@ textarea.inp{height:120px;padding:14px 18px;resize:vertical}
   <div class="wrap grid">
     <div class="head"><span class="label up">People</span><h2 class="h-sec tl">같은 사람이<br><em>처음부터 끝까지</em></h2><p class="desc up">여백의 모든 작업자는 직접 고용한 정직원입니다. 4주 교육과 현장 실습을 마친 사람만 현장에 나갑니다.</p></div>
     <div class="people stag">
-      <article class="person"><div class="ph"><img data-img="z-check" alt="체크리스트로 점검하는 팀장" loading="lazy"></div><span class="r">TEAM LEADER</span><h3>현장 팀장</h3><p>상담부터 최종 점검까지 한 사람이 맡습니다. 320개 항목을 직접 확인하고 보증서에 인장을 찍습니다.</p><div class="tg"><span>경력 5년 이상</span><span>최종 점검</span></div></article>
-      <article class="person"><div class="ph"><img data-img="svc-clean" alt="주방을 닦는 클린 마스터" loading="lazy"></div><span class="r">CLEAN MASTER</span><h3>클린 마스터</h3><p>구역을 나눠 맡아 42단계를 같은 순서로 진행합니다. 구역별로 색이 다른 극세사를 씁니다.</p><div class="tg"><span>4주 교육 수료</span><span>구역 전담</span></div></article>
-      <article class="person"><div class="ph"><img data-img="svc-ac" alt="에어컨을 분해하는 기사" loading="lazy"></div><span class="r">AIR TECHNICIAN</span><h3>에어컨 기사</h3><p>제조사별 분해 구조를 익힌 전문 기사가 송풍팬과 열교환기를 꺼내 씻고 시운전까지 확인합니다.</p><div class="tg"><span>제조사별 교육</span><span>시운전 확인</span></div></article>
+      <article class="person"><div class="ph"><img data-img="team-leader" alt="태블릿으로 작업을 확인하는 여백 현장 팀장" loading="lazy"></div><span class="r">TEAM LEADER</span><h3>현장 팀장</h3><p>상담부터 최종 점검까지 한 사람이 맡습니다. 320개 항목을 직접 확인하고 보증서에 인장을 찍습니다.</p><div class="tg"><span>경력 5년 이상</span><span>최종 점검</span></div></article>
+      <article class="person"><div class="ph"><img data-img="team-clean" alt="통창 유리를 닦는 여백 클린 마스터" loading="lazy"></div><span class="r">CLEAN MASTER</span><h3>클린 마스터</h3><p>구역을 나눠 맡아 42단계를 같은 순서로 진행합니다. 구역별로 색이 다른 극세사를 씁니다.</p><div class="tg"><span>4주 교육 수료</span><span>구역 전담</span></div></article>
+      <article class="person"><div class="ph"><img data-img="team-ac" alt="벽걸이 에어컨을 세척하는 여백 에어컨 기사" loading="lazy"></div><span class="r">AIR TECHNICIAN</span><h3>에어컨 기사</h3><p>제조사별 분해 구조를 익힌 전문 기사가 송풍팬과 열교환기를 꺼내 씻고 시운전까지 확인합니다.</p><div class="tg"><span>제조사별 교육</span><span>시운전 확인</span></div></article>
     </div>
   </div>
 </section>
@@ -992,7 +992,7 @@ t.addEventListener("click",function(){window.scrollTo({top:0,behavior:matchMedia
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 /* ---------- images ---------- */
-const IMG={"hero": {"file": "stock/hero-r.jpg", "remote": ""}, "cta": {"file": "stock/cta.jpg", "remote": ""}, "svc-clean": {"file": "stock/svc-clean.jpg", "remote": ""}, "svc-ac": {"file": "stock/svc-ac.jpg", "remote": ""}, "ac-fan": {"file": "stock/ac-fan.jpg", "remote": ""}, "z-entry": {"file": "stock/z-entry.jpg", "remote": ""}, "z-kitchen": {"file": "stock/z-kitchen.jpg", "remote": ""}, "z-bath": {"file": "stock/z-bath.jpg", "remote": ""}, "z-room": {"file": "stock/z-room.jpg", "remote": ""}, "z-window": {"file": "stock/z-window.jpg", "remote": ""}, "z-check": {"file": "stock/z-check.jpg", "remote": ""}};
+const IMG={"hero": {"file": "stock/hero-r.jpg", "remote": ""}, "cta": {"file": "stock/cta.jpg", "remote": ""}, "svc-clean": {"file": "stock/svc-clean.jpg", "remote": ""}, "svc-ac": {"file": "stock/svc-ac.jpg", "remote": ""}, "ac-fan": {"file": "stock/ac-fan.jpg", "remote": ""}, "z-entry": {"file": "stock/z-entry.jpg", "remote": ""}, "z-kitchen": {"file": "stock/z-kitchen.jpg", "remote": ""}, "z-bath": {"file": "stock/z-bath.jpg", "remote": ""}, "z-room": {"file": "stock/z-room.jpg", "remote": ""}, "z-window": {"file": "stock/z-window.jpg", "remote": ""}, "z-check": {"file": "stock/z-check.jpg", "remote": ""}, "team-leader": {"file": "team/leader.jpg", "remote": ""}, "team-clean": {"file": "team/clean.jpg", "remote": ""}, "team-ac": {"file": "team/ac.jpg", "remote": ""}};
 document.querySelectorAll('img[data-img]').forEach(img=>{
   const it=IMG[img.dataset.img]; if(!it) return;
   img.addEventListener('error',()=>{ if(img.dataset.fb) return; img.dataset.fb=1; img.src=it.remote; });
