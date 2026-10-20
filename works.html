@@ -836,7 +836,7 @@ textarea.inp{height:120px;padding:14px 18px;resize:vertical}
 
 /* 여백 소개 · 새 로고 카드 (2026-10-20) */
 .name .logo-card{flex-direction:column}
-.name .logo-card .stage{position:relative;width:86%;margin:40px 0}
+.name .logo-card .stage{position:relative;width:80%;margin:0}
 .name .logo-card .lg{display:block;width:100%;height:auto;color:#fff}
 .name .logo-card .void{position:absolute;left:46%;top:1%;width:53%;height:67%;border:1.5px dashed rgba(255,255,255,.38);border-radius:14px}
 .name .logo-card .pin{white-space:nowrap}
@@ -988,7 +988,7 @@ t.addEventListener("click",function(){window.scrollTo({top:0,behavior:matchMedia
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 /* ---------- images ---------- */
-const IMG={"hero": {"file": "stock/hero-r.jpg", "remote": ""}, "cta": {"file": "stock/cta.jpg", "remote": ""}, "svc-clean": {"file": "stock/svc-clean.jpg", "remote": ""}, "svc-ac": {"file": "stock/svc-ac.jpg", "remote": ""}, "ac-fan": {"file": "stock/ac-fan.jpg", "remote": ""}, "z-entry": {"file": "stock/z-entry.jpg", "remote": ""}, "z-kitchen": {"file": "stock/z-kitchen.jpg", "remote": ""}, "z-bath": {"file": "stock/z-bath.jpg", "remote": ""}, "z-room": {"file": "stock/z-room.jpg", "remote": ""}, "z-window": {"file": "stock/z-window.jpg", "remote": ""}, "z-check": {"file": "stock/z-check.jpg", "remote": ""}};
+const IMG={"hero": {"file": "stock/hero-r.jpg", "remote": ""}, "cta": {"file": "stock/cta.jpg", "remote": ""}, "svc-clean": {"file": "v2/svc-clean.jpg", "remote": ""}, "svc-ac": {"file": "v2/svc-ac.jpg", "remote": ""}, "ac-fan": {"file": "stock/ac-fan.jpg", "remote": ""}, "z-entry": {"file": "stock/z-entry.jpg", "remote": ""}, "z-kitchen": {"file": "stock/z-kitchen.jpg", "remote": ""}, "z-bath": {"file": "stock/z-bath.jpg", "remote": ""}, "z-room": {"file": "stock/z-room.jpg", "remote": ""}, "z-window": {"file": "v2/z-window.jpg", "remote": ""}, "z-check": {"file": "v2/z-check.jpg", "remote": ""}, "team-leader": {"file": "team/leader.jpg", "remote": ""}, "team-clean": {"file": "team/clean.jpg", "remote": ""}, "team-ac": {"file": "team/ac.jpg", "remote": ""}, "team-group": {"file": "v2/team-group.jpg", "remote": ""}};
 document.querySelectorAll('img[data-img]').forEach(img=>{
   const it=IMG[img.dataset.img]; if(!it) return;
   img.addEventListener('error',()=>{ if(img.dataset.fb) return; img.dataset.fb=1; img.src=it.remote; });
